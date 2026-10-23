@@ -143,7 +143,10 @@ export function DashboardSidebar({ userName, userEmail }: SidebarProps) {
             </p>
           </div>
           <button
-            onClick={() => signOut({ callbackUrl: "/login" })}
+            onClick={async () => {
+              await signOut({ redirect: false });
+              window.location.href = "/login";
+            }}
             title="Sign out"
             className="p-1.5 text-zinc-400 hover:text-rose-400 transition-colors rounded-md hover:bg-white/5"
           >
