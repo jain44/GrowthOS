@@ -80,7 +80,7 @@ export default function BillingPage() {
       <div className="flex items-center justify-between pb-4 border-b border-white/[0.08]">
         <div>
           <h1 className="text-2xl font-bold text-white tracking-tight flex items-center gap-2.5">
-            <CreditCard className="w-6 h-6 text-indigo-400" />
+            <CreditCard className="w-6 h-6 text-orange-400" />
             Billing & Subscriptions
           </h1>
           <p className="text-xs text-zinc-400 mt-1">
@@ -95,12 +95,12 @@ export default function BillingPage() {
       </div>
 
       {/* Active Subscription Overview */}
-      <Card className="bg-gradient-to-r from-zinc-900 via-indigo-950/30 to-zinc-900 border-indigo-500/30">
+      <Card className="bg-gradient-to-r from-zinc-900 via-orange-950/20 to-zinc-900 border-orange-500/30">
         <CardContent className="p-6">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold text-indigo-400 uppercase tracking-wider">Current Plan</span>
+                <span className="text-xs font-semibold text-orange-400 uppercase tracking-wider">Current Plan</span>
                 <Badge variant="success">Active</Badge>
               </div>
               <h2 className="text-2xl font-extrabold text-white">Growth Plan (₹2,999/month)</h2>
@@ -157,7 +157,7 @@ export default function BillingPage() {
             <button
               onClick={() => setBillingCycle("monthly")}
               className={`px-3 py-1 text-xs font-semibold rounded-full transition-colors ${
-                billingCycle === "monthly" ? "bg-indigo-600 text-white" : "text-zinc-400 hover:text-white"
+                billingCycle === "monthly" ? "bg-orange-500 text-white" : "text-zinc-400 hover:text-white"
               }`}
             >
               Monthly
@@ -165,7 +165,7 @@ export default function BillingPage() {
             <button
               onClick={() => setBillingCycle("annual")}
               className={`px-3 py-1 text-xs font-semibold rounded-full transition-colors flex items-center gap-1 ${
-                billingCycle === "annual" ? "bg-indigo-600 text-white" : "text-zinc-400 hover:text-white"
+                billingCycle === "annual" ? "bg-orange-500 text-white" : "text-zinc-400 hover:text-white"
               }`}
             >
               Annual
@@ -184,12 +184,12 @@ export default function BillingPage() {
                 key={plan.id}
                 className={`p-6 flex flex-col justify-between relative transition-all ${
                   plan.popular
-                    ? "bg-zinc-900/90 border-2 border-indigo-500 shadow-xl shadow-indigo-500/10"
+                    ? "bg-zinc-900/90 border-2 border-orange-500 shadow-xl shadow-orange-500/10"
                     : "bg-zinc-900/40 border-white/10"
                 }`}
               >
                 {plan.popular && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-[10px] font-bold text-white uppercase tracking-wider">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-[10px] font-bold text-white uppercase tracking-wider">
                     Current Active Tier
                   </span>
                 )}
@@ -235,7 +235,7 @@ export default function BillingPage() {
       {/* GST Details */}
       <Card className="bg-zinc-900/40 border-white/10 p-6 space-y-4">
         <div className="flex items-center gap-3">
-          <Building className="w-5 h-5 text-indigo-400" />
+          <Building className="w-5 h-5 text-orange-400" />
           <div>
             <h3 className="text-sm font-bold text-white">Indian GSTIN Invoicing</h3>
             <p className="text-xs text-zinc-400">Add your GSTIN to get tax invoice credit for business expense claims.</p>
@@ -247,7 +247,7 @@ export default function BillingPage() {
             placeholder="e.g. 27AAAAA0000A1Z5"
             value={gstin}
             onChange={(e) => setGstin(e.target.value)}
-            className="flex-1 px-3 py-2 bg-zinc-950 border border-white/10 rounded-lg text-xs text-white uppercase placeholder:text-zinc-600 focus:outline-none focus:border-indigo-500"
+            className="flex-1 px-3 py-2 bg-zinc-950 border border-white/10 rounded-lg text-xs text-white uppercase placeholder:text-zinc-600 focus:outline-none focus:border-orange-500"
           />
           <Button variant="secondary" size="sm" className="text-xs" onClick={() => alert("GSTIN saved!")}>
             Save GSTIN
@@ -271,7 +271,7 @@ export default function BillingPage() {
                   <Badge variant="success">{inv.status}</Badge>
                   <button
                     onClick={() => alert(`Downloading Invoice ${inv.id}`)}
-                    className="p-1.5 text-zinc-400 hover:text-indigo-300 transition-colors"
+                    className="p-1.5 text-zinc-400 hover:text-orange-300 transition-colors"
                     title="Download Tax Invoice"
                   >
                     <Download className="w-4 h-4" />
@@ -286,10 +286,10 @@ export default function BillingPage() {
       {/* Razorpay Checkout Modal Simulation */}
       {showModal && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-zinc-900 border border-indigo-500/30 rounded-2xl max-w-md w-full p-6 space-y-6 shadow-2xl animate-fade-in">
+          <div className="bg-zinc-900 border border-orange-500/30 rounded-2xl max-w-md w-full p-6 space-y-6 shadow-2xl animate-fade-in">
             <div className="flex items-center justify-between pb-3 border-b border-white/10">
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-xs">
+                <div className="w-7 h-7 rounded-lg bg-orange-500 flex items-center justify-center text-white font-bold text-xs">
                   RZP
                 </div>
                 <div>
@@ -322,7 +322,7 @@ export default function BillingPage() {
             <div className="space-y-2">
               <p className="text-[11px] text-zinc-400 font-semibold uppercase tracking-wider">Select Payment Method (India)</p>
               <div className="grid grid-cols-2 gap-2 text-xs">
-                <div className="p-3 rounded-lg border border-indigo-500/40 bg-indigo-500/10 text-indigo-300 font-medium flex items-center gap-2">
+                <div className="p-3 rounded-lg border border-orange-500/40 bg-orange-500/10 text-orange-300 font-medium flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-400" />
                   UPI / GPay / PhonePe
                 </div>

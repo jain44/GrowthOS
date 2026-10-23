@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
 import {
@@ -12,7 +13,6 @@ import {
   Settings,
   CreditCard,
   LogOut,
-  Zap,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -42,14 +42,15 @@ export function DashboardSidebar({ userName, userEmail }: SidebarProps) {
     <aside className="w-60 h-screen bg-zinc-950/80 backdrop-blur-xl border-r border-white/[0.08] flex flex-col flex-shrink-0 select-none z-20">
       {/* Brand Header */}
       <div className="p-4 border-b border-white/[0.06] flex items-center justify-between">
-        <Link href="/dashboard" className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-purple-500 flex items-center justify-center shadow-md shadow-indigo-500/20">
-            <Zap className="w-4 h-4 text-white" />
-          </div>
-          <div>
-            <span className="text-sm font-bold text-white tracking-tight">GrowthOS</span>
-            <span className="block text-[10px] font-medium text-indigo-400">AI Growth Engine</span>
-          </div>
+        <Link href="/dashboard" className="flex items-center">
+          <Image
+            src="/logo.jpeg"
+            alt="GrowthOS"
+            width={160}
+            height={48}
+            className="h-10 w-auto object-contain"
+            priority
+          />
         </Link>
       </div>
 
@@ -73,19 +74,19 @@ export function DashboardSidebar({ userName, userEmail }: SidebarProps) {
                   className={cn(
                     "flex items-center gap-3 px-3 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 group relative",
                     isActive
-                      ? "bg-indigo-600/15 text-indigo-300 border border-indigo-500/30 shadow-sm"
+                      ? "bg-orange-500/15 text-orange-300 border border-orange-500/30 shadow-sm"
                       : "text-zinc-400 hover:text-zinc-100 hover:bg-white/[0.04]"
                   )}
                 >
                   <item.icon
                     className={cn(
                       "w-4 h-4 flex-shrink-0 transition-colors",
-                      isActive ? "text-indigo-400" : "text-zinc-500 group-hover:text-zinc-200"
+                      isActive ? "text-orange-400" : "text-zinc-500 group-hover:text-zinc-200"
                     )}
                   />
                   <span className="flex-1 truncate">{item.label}</span>
                   {item.badge && (
-                    <span className="text-[10px] font-semibold text-indigo-300 bg-indigo-500/20 border border-indigo-500/30 px-2 py-0.5 rounded-full">
+                    <span className="text-[10px] font-semibold text-orange-300 bg-orange-500/20 border border-orange-500/30 px-2 py-0.5 rounded-full">
                       {item.badge}
                     </span>
                   )}
@@ -109,11 +110,16 @@ export function DashboardSidebar({ userName, userEmail }: SidebarProps) {
                   className={cn(
                     "flex items-center gap-3 px-3 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 group",
                     isActive
-                      ? "bg-indigo-600/15 text-indigo-300 border border-indigo-500/30 shadow-sm"
+                      ? "bg-orange-500/15 text-orange-300 border border-orange-500/30 shadow-sm"
                       : "text-zinc-400 hover:text-zinc-100 hover:bg-white/[0.04]"
                   )}
                 >
-                  <item.icon className="w-4 h-4 flex-shrink-0 text-zinc-500 group-hover:text-zinc-200" />
+                  <item.icon
+                    className={cn(
+                      "w-4 h-4 flex-shrink-0 transition-colors",
+                      isActive ? "text-orange-400" : "text-zinc-500 group-hover:text-zinc-200"
+                    )}
+                  />
                   <span className="flex-1 truncate">{item.label}</span>
                 </Link>
               );
@@ -125,7 +131,7 @@ export function DashboardSidebar({ userName, userEmail }: SidebarProps) {
       {/* User Footer */}
       <div className="p-3 border-t border-white/[0.06] bg-zinc-950/60">
         <div className="flex items-center gap-3 p-2 rounded-lg bg-zinc-900/50 border border-white/[0.06]">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-md">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-orange-500 to-amber-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-md">
             {userName?.[0]?.toUpperCase() ?? "U"}
           </div>
           <div className="flex-1 min-w-0">

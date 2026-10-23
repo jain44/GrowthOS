@@ -36,7 +36,7 @@ export interface ActionItem {
   effort: "low" | "medium" | "high";
   timeToResult: string;                  // "7–14 days"
   tool: string;                          // "Razorpay Magic Checkout"
-  howTo: string;                         // Specific step-by-step instruction
+  howTo?: string;                        // Specific step-by-step instruction
   clickPath?: string;                    // "Shopify App Store → Razorpay Magic Checkout → Settings"
   copyTemplate?: {
     label: string;

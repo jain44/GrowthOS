@@ -83,8 +83,8 @@ export default async function DashboardPage() {
       label: "Avg. Order Value",
       value: business.averageOrderValue ? formatCurrency(Number(business.averageOrderValue)) : "—",
       icon: ShoppingCart,
-      color: "text-sky-400",
-      bg: "bg-sky-500/10 border-sky-500/20",
+      color: "text-amber-400",
+      bg: "bg-amber-500/10 border-amber-500/20",
     },
     {
       label: "Acquisition Cost",
@@ -92,15 +92,15 @@ export default async function DashboardPage() {
         ? formatCurrency(Number(business.customerAcquisitionCost))
         : "—",
       icon: Users,
-      color: "text-purple-400",
-      bg: "bg-purple-500/10 border-purple-500/20",
+      color: "text-orange-400",
+      bg: "bg-orange-500/10 border-orange-500/20",
     },
     {
       label: "Blended ROAS",
       value: business.returnOnAdSpend ? `${Number(business.returnOnAdSpend).toFixed(1)}x` : "—",
       icon: BarChart3,
-      color: "text-indigo-400",
-      bg: "bg-indigo-500/10 border-indigo-500/20",
+      color: "text-amber-400",
+      bg: "bg-amber-500/10 border-amber-500/20",
     },
   ];
 
@@ -119,7 +119,7 @@ export default async function DashboardPage() {
         </div>
         <div className="flex items-center gap-3">
           <Link href="/dashboard/diagnose">
-            <Button variant="gradient" className="gap-2 shadow-lg shadow-indigo-500/20">
+            <Button variant="gradient" className="gap-2 shadow-lg shadow-orange-500/20">
               <Brain className="w-4 h-4" />
               Run 7-Agent Diagnosis
             </Button>
@@ -137,7 +137,7 @@ export default async function DashboardPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Health Ring Widget */}
         <Card className="flex flex-col items-center justify-center p-8 text-center bg-zinc-900/80 border-white/10 relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all" />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl group-hover:bg-orange-500/20 transition-all" />
           <p className="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-4">
             Store Health Index
           </p>
@@ -182,7 +182,7 @@ export default async function DashboardPage() {
               </div>
               <p className="text-xs text-zinc-400">Run your first diagnosis to calculate health score</p>
               <Link href="/dashboard/diagnose">
-                <Button size="sm">Run Diagnosis</Button>
+                <Button size="sm" variant="gradient">Run Diagnosis</Button>
               </Link>
             </div>
           )}
@@ -193,7 +193,7 @@ export default async function DashboardPage() {
           <CardHeader>
             <div className="flex items-center justify-between">
               <CardTitle className="text-base flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-indigo-400" />
+                <Sparkles className="w-4 h-4 text-orange-400" />
                 Latest Executive Diagnostic Brief
               </CardTitle>
               {lastAnalysis && <Badge variant="success">Completed</Badge>}
@@ -222,11 +222,11 @@ export default async function DashboardPage() {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-indigo-500/10 border border-indigo-500/20">
+                <div className="p-4 rounded-xl bg-orange-500/10 border border-orange-500/20">
                   <div className="flex items-start gap-3">
-                    <ArrowRight className="w-4 h-4 text-indigo-400 flex-shrink-0 mt-0.5" />
+                    <ArrowRight className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-1">Recommended Immediate Action</p>
+                      <p className="text-xs font-semibold text-orange-400 uppercase tracking-wider mb-1">Recommended Immediate Action</p>
                       <p className="text-sm text-zinc-200">{summary.primaryAction}</p>
                     </div>
                   </div>
@@ -257,7 +257,7 @@ export default async function DashboardPage() {
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {kpiCards.map((kpi) => (
-            <Card key={kpi.label} className="hover:border-indigo-500/30 transition-all group">
+            <Card key={kpi.label} className="hover:border-orange-500/30 transition-all group">
               <CardContent className="p-5">
                 <div className={`w-9 h-9 rounded-xl ${kpi.bg} border flex items-center justify-center mb-3 group-hover:scale-105 transition-transform`}>
                   <kpi.icon className={`w-4 h-4 ${kpi.color}`} />
@@ -283,16 +283,16 @@ export default async function DashboardPage() {
               icon: Brain,
               label: "Run 7-Agent Diagnosis",
               desc: "Parallel AI agent audit across store operations",
-              glow: "border-indigo-500/20 hover:border-indigo-500/40",
-              iconBg: "bg-indigo-500/20 text-indigo-400",
+              glow: "border-orange-500/20 hover:border-orange-500/40",
+              iconBg: "bg-orange-500/20 text-orange-400",
             },
             {
               href: "/dashboard/simulate",
               icon: FlaskConical,
               label: "Simulate Growth Strategy",
               desc: "Test strategic moves before committing capital",
-              glow: "border-purple-500/20 hover:border-purple-500/40",
-              iconBg: "bg-purple-500/20 text-purple-400",
+              glow: "border-amber-500/20 hover:border-amber-500/40",
+              iconBg: "bg-amber-500/20 text-amber-400",
             },
             {
               href: "/dashboard/report",
@@ -308,7 +308,7 @@ export default async function DashboardPage() {
                 <div className={`w-11 h-11 rounded-xl ${action.iconBg} flex items-center justify-center mb-4`}>
                   <action.icon className="w-5 h-5" />
                 </div>
-                <h3 className="text-sm font-bold text-white mb-1 group-hover:text-indigo-300 transition-colors">
+                <h3 className="text-sm font-bold text-white mb-1 group-hover:text-orange-300 transition-colors">
                   {action.label}
                 </h3>
                 <p className="text-xs text-zinc-400">{action.desc}</p>

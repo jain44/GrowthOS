@@ -34,8 +34,8 @@ const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
 
     const variantStyles: Record<string, string> = {
       default: "bg-zinc-800/80 text-zinc-300 border-zinc-700/60",
-      primary: "bg-indigo-500/15 text-indigo-300 border-indigo-500/30",
-      secondary: "bg-purple-500/15 text-purple-300 border-purple-500/30",
+      primary: "bg-orange-500/15 text-orange-300 border-orange-500/30",
+      secondary: "bg-amber-500/15 text-amber-300 border-amber-500/30",
       success: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30",
       warning: "bg-amber-500/15 text-amber-300 border-amber-500/30",
       danger: "bg-rose-500/15 text-rose-300 border-rose-500/30",

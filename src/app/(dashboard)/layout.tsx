@@ -16,8 +16,8 @@ export default async function DashboardLayout({
   return (
     <div className="flex h-screen bg-[#090A0F] text-zinc-100 overflow-hidden relative">
       {/* Subtle Background Glow Spheres */}
-      <div className="absolute top-0 left-64 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-64 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-10 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl pointer-events-none" />
 
       <DashboardSidebar
         userName={session.user.name}
