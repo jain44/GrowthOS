@@ -29,7 +29,7 @@ export async function retrieveKnowledgeChunks(
       orderBy: { createdAt: "desc" },
     });
 
-    return chunks.map((c) => ({
+    return chunks.map((c: any) => ({
       id: c.id,
       content: c.content,
       source: c.source,
