@@ -41,3 +41,6 @@ next-env.d.ts
 __pycache__/
 *.py[cod]
 *$py.class
+
+# scratch / local test scripts (may contain API keys)
+/scratch
